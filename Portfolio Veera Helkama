@@ -9,73 +9,67 @@
             font-family: Arial, sans-serif;
             background-color: white;
             color: black;
-            text-align: center;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            text-align: center;
         }
-        .container {
-            max-width: 800px;
-            margin: auto;
+        .navbar {
+            background-color: #f0f0f0;
+            padding: 10px;
         }
-        h1 {
-            font-size: 2em;
+        .navbar button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
         }
         .section {
-            margin: 20px 0;
-            cursor: pointer;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .content {
             display: none;
-            margin-top: 10px;
+            padding: 20px;
+        }
+        .active {
+            display: block;
         }
         img {
-            max-width: 100%;
+            max-width: 300px;
             height: auto;
-            margin-top: 10px;
+            margin-bottom: 20px;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Minun Portfolioni</h1>
-        <div class="section" data-id="about">
-            <h2>Tietoa minusta</h2>
-            <div id="about" class="content">
-                <p>Olen hammaslääketieteen opiskelija, joka harrastaa kirjoittamista ja nauttii uuden oppimisesta.</p>
-            </div>
-        </div>
-        <div class="section" data-id="portfolio">
-            <h2>Työnäytteet</h2>
-            <div id="portfolio" class="content">
-                <p>Tässä joitakin esimerkkejä kirjoituksistani:</p>
-                <img src="esimerkki.jpg" alt="Työnäyte">
-            </div>
-        </div>
-        <div class="section" data-id="contact">
-            <h2>Ota yhteyttä</h2>
-            <div id="contact" class="content">
-                <p>Voit ottaa yhteyttä sähköpostilla: <a href="mailto:helkama.veera@gmail.com">helkama.veera@gmail.com</a></p>
-            </div>
-        </div>
+    <div class="navbar">
+        <button onclick="showSection('about')">Tietoa minusta</button>
+        <button onclick="showSection('portfolio')">Työnäytteet</button>
+        <button onclick="showSection('contact')">Ota yhteyttä</button>
     </div>
+
+    <div id="about" class="section active">
+        <h1>Minä</h1>
+        <img src="profiilikuva.jpg" alt="Kuva minusta">
+        <p>Olen hammaslääketieteen opiskelija, joka harrastaa kirjoittamista ja nauttii uuden oppimisesta.</p>
+    </div>
+
+    <div id="portfolio" class="section">
+        <h1>Työnäytteet</h1>
+        <p>Tässä joitakin esimerkkejä kirjoituksistani:</p>
+        <img src="esimerkki.jpg" alt="Työnäyte">
+    </div>
+
+    <div id="contact" class="section">
+        <h1>Yhteystiedot</h1>
+        <p>Voit ottaa yhteyttä sähköpostilla: <a href="mailto:helkama.veera@gmail.com">helkama.veera@gmail.com</a></p>
+    </div>
+
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        function showSection(id) {
             const sections = document.querySelectorAll(".section");
             sections.forEach(section => {
-                section.addEventListener("click", function () {
-                    const id = this.getAttribute("data-id");
-                    const content = document.getElementById(id);
-                    if (content.style.display === "none" || content.style.display === "") {
-                        content.style.display = "block";
-                    } else {
-                        content.style.display = "none";
-                    }
-                });
+                section.classList.remove("active");
             });
-        });
+            document.getElementById(id).classList.add("active");
+        }
     </script>
 </body>
 </html>
