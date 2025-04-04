@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        .section {
+            margin: 20px 0;
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .content {
+            display: none;
+            margin-top: 10px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Minun Portfolioni</h1>
+        <div class="section" onclick="toggleContent('about')">
+            <h2>Tietoa minusta</h2>
+            <div id="about" class="content">
+                <p>Olen freelance-kirjoittaja, joka rakastaa sanojen voimaa.</p>
+            </div>
+        </div>
+        <div class="section" onclick="toggleContent('portfolio')">
+            <h2>Työnäytteet</h2>
+            <div id="portfolio" class="content">
+                <p>Tässä joitakin esimerkkejä kirjoituksistani:</p>
+                <img src="esimerkki.jpg" alt="Työnäyte">
+            </div>
+        </div>
+        <div class="section" onclick="toggleContent('contact')">
+            <h2>Ota yhteyttä</h2>
+            <div id="contact" class="content">
+                <p>Voit ottaa yhteyttä sähköpostilla: <a href="mailto:esimerkki@email.com">esimerkki@email.com</a></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
