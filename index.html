@@ -1,66 +1,129 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veera Helkama | Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: white;
-            color: black;
             margin: 0;
-            padding: 0;
-            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            display: flex;
+            height: 100vh;
         }
-        .navbar {
-            background-color: #f0f0f0;
+        .sidebar {
+            width: 220px;
+            background: linear-gradient(to bottom, #fce4ec, #e3f2fd);
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        .sidebar h2 {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #444;
+        }
+        .sidebar button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
             padding: 10px;
-        }
-        .navbar button {
-            margin: 5px;
-            padding: 10px 20px;
+            border: none;
+            background-color: #ffffffaa;
+            color: #333;
             font-size: 16px;
             cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        .sidebar button:hover {
+            background-color: #fff;
+        }
+        .content {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
         }
         .section {
             display: none;
-            padding: 20px;
+            animation: fadeIn 0.3s ease-in-out;
         }
         .active {
             display: block;
         }
-        img {
-            max-width: 300px;
-            height: auto;
+        img.profile {
+            max-width: 250px;
+            border-radius: 12px;
             margin-bottom: 20px;
-            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                box-shadow: none;
+            }
+            .sidebar button {
+                margin: 5px;
+                flex: 1 0 30%;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <button onclick="showSection('about')">Tietoa minusta</button>
+    <div class="sidebar">
+        <h2>Valikko</h2>
+        <button onclick="showSection('about')">Minä</button>
+        <button onclick="showSection('hobbies')">Harrastukset</button>
+        <button onclick="showSection('studies')">Opinnot</button>
         <button onclick="showSection('portfolio')">Työnäytteet</button>
+        <button onclick="showSection('cv')">CV</button>
         <button onclick="showSection('contact')">Ota yhteyttä</button>
     </div>
 
-    <div id="about" class="section active">
-        <h1>Minä</h1>
-        <img src="WhatsApp-Kuva 2025-04-04 klo 14.05.21_1cd608cf.jpg" alt="Veera Helkama" style="max-width: 300px; border-radius: 10px; margin-bottom: 20px;">
+    <div class="content">
+        <div id="about" class="section active">
+            <h1>Minä</h1>
+            <img src="WhatsApp-Kuva 2025-04-04 klo 14.05.21_1cd608cf.jpg" alt="Veera Helkama" class="profile">
+            <p>Olen hammaslääketieteen opiskelija, joka harrastaa kirjoittamista ja nauttii uuden oppimisesta.</p>
+        </div>
 
-       <p>Olen hammaslääketieteen opiskelija, joka harrastaa kirjoittamista ja nauttii uuden oppimisesta.</p>
-    </div>
+        <div id="hobbies" class="section">
+            <h1>Harrastukset</h1>
+            <p>Tykkään kirjoittaa, pelata lautapelejä, nauttia auringonlaskuista ja fiilistellä puhtaissa lakanoissa.</p>
+        </div>
 
-    <div id="portfolio" class="section">
-        <h1>Työnäytteet</h1>
-        <p>Tässä joitakin esimerkkejä kirjoituksistani:</p>
-        <img src="esimerkki.jpg" alt="Työnäyte">
-    </div>
+        <div id="studies" class="section">
+            <h1>Opinnot</h1>
+            <p>Opiskelen hammaslääketiedettä, ja suhtaudun tieteeseen ja ihmisten hyvinvointiin intohimolla.</p>
+        </div>
 
-    <div id="contact" class="section">
-        <h1>Yhteystiedot</h1>
-        <p>Voit ottaa yhteyttä sähköpostilla: <a href="mailto:helkama.veera@gmail.com">helkama.veera@gmail.com</a></p>
+        <div id="portfolio" class="section">
+            <h1>Työnäytteet</h1>
+            <p>Tässä joitain kirjoituksiani:</p>
+            <img src="esimerkki.jpg" alt="Työnäyte" class="profile">
+        </div>
+
+        <div id="cv" class="section">
+            <h1>CV</h1>
+            <p>CV:n voi toimittaa pyynnöstä. Ota rohkeasti yhteyttä!</p>
+        </div>
+
+        <div id="contact" class="section">
+            <h1>Ota yhteyttä</h1>
+            <p>Sähköposti: <a href="mailto:helkama.veera@gmail.com">helkama.veera@gmail.com</a></p>
+        </div>
     </div>
 
     <script>
