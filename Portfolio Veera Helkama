@@ -44,7 +44,7 @@
         <div class="section" onclick="toggleContent('about')">
             <h2>Tietoa minusta</h2>
             <div id="about" class="content">
-                <p>Olen freelance-kirjoittaja, joka rakastaa sanojen voimaa.</p>
+                <p>Olen hammaslääketieteen opiskelija, joka harrastaa kirjoittamista ja nauttii uuden oppimisesta.</p>
             </div>
         </div>
         <div class="section" onclick="toggleContent('portfolio')">
@@ -57,7 +57,7 @@
         <div class="section" onclick="toggleContent('contact')">
             <h2>Ota yhteyttä</h2>
             <div id="contact" class="content">
-                <p>Voit ottaa yhteyttä sähköpostilla: <a href="mailto:esimerkki@email.com">esimerkki@email.com</a></p>
+                <p>Voit ottaa yhteyttä sähköpostilla: <a href="helkama.veera@gmail.com">helkama.veera@gmail.com</a></p>
             </div>
         </div>
     </div>
