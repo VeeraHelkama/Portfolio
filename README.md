@@ -1,1 +1,1 @@
-# Portfolio - Veera Helkama
+# Veera Helkama
