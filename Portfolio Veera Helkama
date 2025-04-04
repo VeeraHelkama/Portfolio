@@ -41,35 +41,41 @@
 <body>
     <div class="container">
         <h1>Minun Portfolioni</h1>
-        <div class="section" onclick="toggleContent('about')">
+        <div class="section" data-id="about">
             <h2>Tietoa minusta</h2>
             <div id="about" class="content">
                 <p>Olen hammaslääketieteen opiskelija, joka harrastaa kirjoittamista ja nauttii uuden oppimisesta.</p>
             </div>
         </div>
-        <div class="section" onclick="toggleContent('portfolio')">
+        <div class="section" data-id="portfolio">
             <h2>Työnäytteet</h2>
             <div id="portfolio" class="content">
                 <p>Tässä joitakin esimerkkejä kirjoituksistani:</p>
                 <img src="esimerkki.jpg" alt="Työnäyte">
             </div>
         </div>
-        <div class="section" onclick="toggleContent('contact')">
+        <div class="section" data-id="contact">
             <h2>Ota yhteyttä</h2>
             <div id="contact" class="content">
-                <p>Voit ottaa yhteyttä sähköpostilla: <a href="helkama.veera@gmail.com">helkama.veera@gmail.com</a></p>
+                <p>Voit ottaa yhteyttä sähköpostilla: <a href="mailto:helkama.veera@gmail.com">helkama.veera@gmail.com</a></p>
             </div>
         </div>
     </div>
     <script>
-        function toggleContent(id) {
-            var content = document.getElementById(id);
-            if (content.style.display === "none" || content.style.display === "") {
-                content.style.display = "block";
-            } else {
-                content.style.display = "none";
-            }
-        }
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".section");
+            sections.forEach(section => {
+                section.addEventListener("click", function () {
+                    const id = this.getAttribute("data-id");
+                    const content = document.getElementById(id);
+                    if (content.style.display === "none" || content.style.display === "") {
+                        content.style.display = "block";
+                    } else {
+                        content.style.display = "none";
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
