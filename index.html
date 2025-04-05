@@ -225,49 +225,41 @@
         
     </div>
 
-    <div id="portfolio" class="section">
-      <h1>Työnäytteet</h1>
-      <div style="display: flex; flex-direction: column; gap: 30px; max-width: 700px; margin: auto;">
-        <div style="background-color: #fce4ec; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-          <h3 style="margin-top: 0;">Nuorten väkivaltarikokset näkyvät helsinkiläisten arjessa</h3>
-          <p style="line-height: 1.6;">"Liki puolet helsinkiläisistä pitää Helsingin keskustaa viikonloppuöisin vaarallisena."<br><em>Kirjoittanut: Veera Helkama</em></p>
-          <a href="https://www.360journalismia.fi/nuorten-vakivaltarikokset-nakyvat-helsinkilaisten-arjessa/" target="_blank">&rarr; Lue koko artikkeli</a>
-        </div>
-
-        <div style="background-color: #fce4ec; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-          <h3 style="margin-top: 0;">Ääripäiden poliitikot saavat somessa eniten näkyvyyttä</h3>
-          <p style="line-height: 1.6;">"Algoritmit suosivat ääripäiden poliitikkoja. Tunteita herättävät kovasanaiset ja kärjekkäät julkaisut saavat huomattavasti enemmän näkyvyyttä kuin maltillisemmat julkaisut."<br><em>Kirjoittanut: Veera Helkama</em></p>
-          <a href="https://www.360journalismia.fi/aaripaiden-poliitikot-saavat-somessa-eniten-nakyvyytta/" target="_blank">&rarr; Lue koko artikkeli</a>
-        </div>
-      </div>
+  <div id="portfolio" class="section">
+  <h1>Työnäytteet</h1>
+  <div style="display: flex; flex-direction: column; gap: 30px; max-width: 700px; margin: auto;">
+    <div style="background-color: #fce4ec; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+      <h3 style="margin-top: 0;">Nuorten väkivaltarikokset näkyvät helsinkiläisten arjessa</h3>
+      <p style="line-height: 1.6;">"Liki puolet helsinkiläisistä pitää Helsingin keskustaa viikonloppuöisin vaarallisena."<br><em>Kirjoittanut: Veera Helkama</em></p>
+      <a href="https://www.360journalismia.fi/nuorten-vakivaltarikokset-nakyvat-helsinkilaisten-arjessa/" target="_blank">&rarr; Lue koko artikkeli</a>
     </div>
 
-    <div id="cv" class="section">
-      <h1>CV</h1>
-      <p>Olen työskennellyt aiempina kesinä useissa eri asiakaspalvelutehtävissä ja tehnyt somea yrityksille. Kesällä 2021 sain mahdollisuuden toimia Sotkamon Jymyn sometiimissä. Kuva viimekesältä, jolloin toimin feissarina kesän tapahtumissa. Toimitan CV:n pyynnöstä. Ota rohkeasti yhteyttä!</p>
-    </div>
-
-    <div id="contact" class="section">
-      <h1>Ota yhteyttä</h1>
-      <p style="max-width: 600px; margin: auto; line-height: 1.6; font-size: 16px;">
-        Kiinnostuitko yhteistöstä, sisällöntuotannosta tai jostain muusta projektista, jossa voisin auttaa? Ota matalalla kynnyksellä yhteyttä sähköpostilla – vastaan mielelläni!
-      </p>
-      <p style="text-align: center; margin-top: 20px;">
-        <a href="mailto:helkama.veera@gmail.com">helkama.veera@gmail.com</a>
-      </p>
+    <div style="background-color: #fce4ec; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+      <h3 style="margin-top: 0;">Ääripäiden poliitikot saavat somessa eniten näkyvyyttä</h3>
+      <p style="line-height: 1.6;">"Algoritmit suosivat ääripäiden poliitikkoja. Tunteita herättävät kovasanaiset ja kärjekkäät julkaisut saavat huomattavasti enemmän näkyvyyttä kuin maltillisemmat julkaisut."<br><em>Kirjoittanut: Veera Helkama</em></p>
+      <a href="https://www.360journalismia.fi/aaripaiden-poliitikot-saavat-somessa-eniten-nakyvyytta/" target="_blank">&rarr; Lue koko artikkeli</a>
     </div>
   </div>
+</div>
 
-  <script>
-    function showSection(id) {
-      const sections = document.querySelectorAll(".section");
-      const buttons = document.querySelectorAll(".sidebar button");
-      sections.forEach(section => section.classList.remove("active"));
-      buttons.forEach(btn => btn.classList.remove("active-btn"));
+<div id="cv" class="section">
+  <h1>CV</h1>
+  <div style="max-width: 700px; margin: auto;">
+    <p style="line-height: 1.6;">
+      Olen työskennellyt aiempina kesinä useissa eri asiakaspalvelutehtävissä ja tehnyt somea yrityksille. Kesällä 2021 sain mahdollisuuden toimia Sotkamon Jymyn sometiimissä. Kuva viimekesältä, jolloin toimin feissarina kesän tapahtumissa.
+      <br><br>Toimitan CV:n pyynnöstä. Ota rohkeasti yhteyttä!
+    </p>
+  </div>
+</div>
 
-      document.getElementById(id).classList.add("active");
-      event.target.classList.add("active-btn");
-    }
-  </script>
-</body>
-</html>
+<div id="contact" class="section">
+  <h1>Ota yhteyttä</h1>
+  <div style="max-width: 700px; margin: auto;">
+    <p style="line-height: 1.6; font-size: 16px;">
+      Kiinnostuitko yhteistyöstä, sisällöntuotannosta tai jostain muusta projektista, jossa voisin auttaa? Ota matalalla kynnyksellä yhteyttä sähköpostilla – vastaan mielelläni!
+    </p>
+    <p style="text-align: center; margin-top: 20px;">
+      <a href="mailto:helkama.veera@gmail.com">helkama.veera@gmail.com</a>
+    </p>
+  </div>
+</div>
