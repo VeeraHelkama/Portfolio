@@ -163,67 +163,27 @@
 <body>
   <div class="sidebar">
     <h2>Valikko</h2>
-    <button onclick="showSection('esittely')" class="active-btn">Esittely</button>
-    <button onclick="showSection('mina')">Minä</button>
-    <button onclick="showSection('portfolio')">Työnäytteet</button>
-    <button onclick="showSection('cv')">CV</button>
-    <button onclick="showSection('contact')">Ota yhteyttä</button>
+    <button onclick="showSection(event, 'esittely')" class="active-btn">Esittely</button>
+    <button onclick="showSection(event, 'mina')">Minä</button>
+    <button onclick="showSection(event, 'portfolio')">Työnäytteet</button>
+    <button onclick="showSection(event, 'cv')">CV</button>
+    <button onclick="showSection(event, 'contact')">Ota yhteyttä</button>
   </div>
 
   <div class="content">
-    <div id="esittely" class="section active">
-      <h1>Esittely</h1>
-      <img src="WhatsApp-Kuva 2025-04-04 klo 14.05.21_1cd608cf.jpg" alt="Veera Helkama" class="profile">
-      <p>Olen freelancerkirjoittaja, joka sanoittaa ajatuksesi ja mahdollistaa unelmasi. Tarvitsetko apukättä yrityksesi tai brändisi sisällöntuotantoon tai vaatiiko ansioluettelosi päivitystä? Kurkkaa työnäytteeni ja ota rohkeasti yhteyttä!</p>
-    </div>
+    <!-- Tähän lisäät eri osiot kuten #esittely, #mina jne. -->
+  </div>
 
-    <div id="mina" class="section">
-      <h1>Minä</h1>
-      <p>Olen hammaslääketieteen opiskelija, jolla kirjoittaminen on elämäntapa ja väylä itseilmaisuun. Olen opiskellut journalismia korkeakoulussa vuosina 2022–2024, kunnes ovet hammaslääketieteelliseen aukenivat. Nyt kannan sisäistä kirjoittajaani harrastuksen ja opintojen oheisen työn muodossa, eikä paloni kirjoittamista kohtaan ole hiipunut – päinvastoin. Olen sanavalmis nuori nainen, joka ei pelkää tarttua haasteisiin ja uusiin mahdollisuuksiin.</p>
+  <script>
+    function showSection(event, id) {
+      const sections = document.querySelectorAll(".section");
+      const buttons = document.querySelectorAll(".sidebar button");
+      sections.forEach(section => section.classList.remove("active"));
+      buttons.forEach(btn => btn.classList.remove("active-btn"));
 
-      <h3>Journalismiopinnot</h3>
-      <p>Opintojen parissa pääsin sukeltamaan journalismin maailmaan ja matkaan tarttui oppia ja upeita muistoja. Kävimme yhdessä FEJS:in opintomatkalla Sloveniassa tutustumassa muihin eurooppalaisiin nuoriin journalistien alkuihin ja matkasimme Jyväskylään kuuntelemaan luentoja yhdenvertaisuudesta journalismissa. Ohessa kuvia opintojen varrelta:</p>
-
-      <div class="image-grid">
-        <figure>
-          <img src="IMG-20250405-WA0009[1].jpg" alt="Kuva">
-          <figcaption>Slovenian opintomatka</figcaption>
-        </figure>
-        <figure>
-          <img src="IMG-20250405-WA0012[1].jpg" alt="Kuva">
-          <figcaption>Seuraamassa eduskuntavaalien vaalitenttiä</figcaption>
-        </figure>
-      </div>
-
-      <h3>Hammaslääketieteen opinnot Riiassa</h3>
-      <p>Opinnot Latviassa ovat vielä alkutaipaleella, mutta kokemus on jo nyt tuonut valtavasti rohkeutta ja englannin kielitaitoa. Uutta sisäistettävää tietoa tulee päivittäin ja olen pyrkinyt kehittämään opiskelutekniikoitani tehokkaammiksi. Myös erilaiseen kulttuuriin sopeutuminen on tuonut omat haasteensa ja avartanut näkökulmia tarkastella maailmaa.</p>
-
-      <div class="image-grid">
-        <figure>
-          <img src="IMG-20250405-WA0020[1].jpg" alt="Kuva">
-          <figcaption>Riiassa opintojen parissa</figcaption>
-        </figure>
-        <figure>
-          <img src="IMG-20250405-WA0019[1].jpg" alt="Kuva">
-          <figcaption>Kampusalue keväällä</figcaption>
-        </figure>
-      </div>
-
-      <h3>Harrastukset</h3>
-      <p>Käytän vapaa-aikani ommellen, juosten ja maalaten. Suhtaudun vaatteisiin ja muotiin intohimoisesti ja olen tehnyt käsin vaatteita jo pienestä pitäen. Arvoihini kuuluu kestävästi ja ekologisesti tuotetut vaatteet ja lähes kaikki vaatteeni ovatkin secondhandia tai itse ompelemia.</p>
-
-      <div class="image-grid">
-        <figure>
-          <img src="WhatsApp-Kuva 2025-04-05 klo 13.31.47_4bad8f3f.jpg" alt="Kuva">
-          <figcaption>Ompelemani vaate</figcaption>
-        </figure>
-        <figure>
-          <img src="WhatsApp-Kuva 2025-04-05 klo 13.32.58_fbc811e6.jpg" alt="Kuva">
-          <figcaption>Kesäinen look</figcaption>
-        </figure>
-        <figure>
-          <img src="WhatsApp-Kuva 2025-04-05 klo 13.33.11_a9da3625.jpg" alt="Kuva">
-          <figcaption>Kirppislöytö yhdistettynä omaan ompeluun</figcaption>
-        </figure>
-      </div>
-    </div>
+      document.getElementById(id).classList.add("active");
+      event.currentTarget.classList.add("active-btn");
+    }
+  </script>
+</body>
+</html>
