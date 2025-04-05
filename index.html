@@ -7,33 +7,34 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Georgia', serif;
-      background-color: #fff9f9;
-      color: #3a3a3a;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff7f9;
+      color: #333;
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
     }
 
     .sidebar {
       width: 220px;
-      background-color: #fce4ec;
-      padding: 40px 25px;
+      background-color: #fbe4ec;
+      padding: 30px 20px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      border-right: 2px solid #f3d0db;
-      position: fixed;
-      height: 100vh;
+      gap: 15px;
+      border-right: 1px solid #f2cfd9;
     }
 
     .sidebar h2 {
       font-size: 22px;
       margin-bottom: 20px;
-      color: #7c4a52;
+      color: #444;
     }
 
     .sidebar button {
       background: none;
       border: none;
-      color: #7c4a52;
+      color: #444;
       font-size: 16px;
       padding: 12px;
       text-align: left;
@@ -44,56 +45,29 @@
 
     .sidebar button:hover,
     .sidebar button.active-btn {
-      background-color: #fbd3e0;
+      background-color: #fbd5e5;
     }
 
     .content {
-      margin-left: 220px;
-      padding: 60px;
+      flex: 1;
+      padding: 40px;
+      overflow-y: auto;
     }
 
     .section {
       display: none;
-      animation: fadeIn 0.4s ease-in-out;
+      animation: fadeIn 0.3s ease-in-out;
     }
 
     .active {
       display: block;
     }
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
+    img.profile {
+      max-width: 250px;
+      border-radius: 12px;
       margin-bottom: 20px;
-      color: #4c2c34;
-    }
-
-    p {
-      line-height: 1.7;
-      font-size: 18px;
-      max-width: 800px;
-    }
-
-    .profile {
-      max-width: 300px;
-      border-radius: 16px;
-      margin-bottom: 30px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    }
-
-    .card {
-      background-color: #fff1f4;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
-      margin-bottom: 30px;
-      max-width: 700px;
-    }
-
-    a {
-      color: #c2185b;
-      text-decoration: none;
-      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
     @keyframes fadeIn {
@@ -102,19 +76,38 @@
     }
 
     @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
       .sidebar {
-        position: static;
         width: 100%;
         flex-direction: row;
         justify-content: space-around;
-        height: auto;
+        gap: 0;
+        padding: 10px 0;
         border-right: none;
-        border-bottom: 2px solid #f3d0db;
+        border-bottom: 1px solid #f2cfd9;
+      }
+
+      .sidebar h2 {
+        display: none;
+      }
+
+      .sidebar button {
+        flex: 1;
+        text-align: center;
+        font-size: 14px;
+        padding: 10px 5px;
       }
 
       .content {
-        margin-left: 0;
-        padding: 30px;
+        padding: 20px;
+      }
+
+      img.profile {
+        max-width: 100%;
+        height: auto;
       }
     }
   </style>
@@ -138,20 +131,23 @@
 
     <div id="mina" class="section">
       <h1>Minä</h1>
-      <p> Olen hammaslääketieteen opiskelija, jolla kirjoittaminen on elämäntapa ja väylä itseilmaisuun. Olen opiskellut journalismia korkeakoulussa vuosina 2022-2024, kunnes ovet hammaslääketieteelliseen aukenivat. Nyt kannan sisäistä kirjoittajaani harrastuksen ja opintojen oheisen työn muodossa, eikä paloni kirjoittamista kohtaan ole hiipunut – päinvastoin. Olen sanavalmis nuori nainen, joka ei pelkää tarttua haasteisiin ja uusiin mahdollisuuksiin.</p>
+      <p> Olen hammaslääketieteen opiskelija, jolla kirjoittaminen elämäntapa ja väylä itseilmaisuun. Olen opiskellut journalismia korkeakoulussa vuosina 2022-2024, kunnes ovet hammaslääketieteelliseen aukenivat. Nyt kannan sisäistä kirjoittajaani harrastuksen ja opintojen oheisen työn muodossa, eikä paloni kirjoittamista kohtaan ole hiipunut - päinvastoin. Olen sanavalmis nuori nainen, joka ei pelkää tarttua haasteisiin ja uusiin mahdollisuuksiin. </p>
     </div>
 
     <div id="portfolio" class="section">
       <h1>Työnäytteet</h1>
-      <div class="card">
-        <h3>Nuorten väkivaltarikokset näkyvät helsinkiläisten arjessa</h3>
-        <p>"Liki puolet helsinkiläisistä pitää Helsingin keskustaa viikonloppuöisin vaarallisena."<br><em>Kirjoittanut: Veera Helkama</em></p>
-        <a href="https://www.360journalismia.fi/nuorten-vakivaltarikokset-nakyvat-helsinkilaisten-arjessa/" target="_blank">&rarr; Lue koko artikkeli</a>
-      </div>
-      <div class="card">
-        <h3>Ääripäiden poliitikot saavat somessa eniten näkyvyyttä</h3>
-        <p>"Algoritmit suosivat ääripäiden poliitikkoja. Tunteita herättävät kovasanaiset ja kärjekkäät julkaisut saavat huomattavasti enemmän näkyvyyttä kuin maltillisemmat julkaisut."<br><em>Kirjoittanut: Veera Helkama</em></p>
-        <a href="https://www.360journalismia.fi/aaripaiden-poliitikot-saavat-somessa-eniten-nakyvyytta/" target="_blank">&rarr; Lue koko artikkeli</a>
+      <div style="display: flex; flex-direction: column; gap: 30px; max-width: 700px; margin: auto;">
+        <div style="background-color: #fce4ec; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+          <h3 style="margin-top: 0;">Nuorten väkivaltarikokset näkyvät helsinkiläisten arjessa</h3>
+          <p style="line-height: 1.6;">"Liki puolet helsinkiläisistä pitää Helsingin keskustaa viikonloppuöisin vaarallisena."<br><em>Kirjoittanut: Veera Helkama</em></p>
+          <a href="https://www.360journalismia.fi/nuorten-vakivaltarikokset-nakyvat-helsinkilaisten-arjessa/" target="_blank" style="color: #d81b60; text-decoration: none; font-weight: bold;">&rarr; Lue koko artikkeli</a>
+        </div>
+
+        <div style="background-color: #fce4ec; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+          <h3 style="margin-top: 0;">Ääripäiden poliitikot saavat somessa eniten näkyvyyttä</h3>
+          <p style="line-height: 1.6;">"Algoritmit suosivat ääripäiden poliitikkoja. Tunteita herättävät kovasanaiset ja kärjekkäät julkaisut saavat huomattavasti enemmän näkyvyyttä kuin maltillisemmat julkaisut."<br><em>Kirjoittanut: Veera Helkama</em></p>
+          <a href="https://www.360journalismia.fi/aaripaiden-poliitikot-saavat-somessa-eniten-nakyvyytta/" target="_blank" style="color: #d81b60; text-decoration: none; font-weight: bold;">&rarr; Lue koko artikkeli</a>
+        </div>
       </div>
     </div>
 
@@ -163,10 +159,12 @@
 
     <div id="contact" class="section">
       <h1>Ota yhteyttä</h1>
-      <div class="card" style="text-align: center; max-width: 600px;">
-        <p>Kiinnostuitko yhteistöstä, sisällöntuotannosta tai jostain muusta projektista, jossa voisin auttaa? Ota matalalla kynnyksellä yhteyttä sähköpostilla – vastaan mielelläni!</p>
-        <p><a href="mailto:helkama.veera@gmail.com">helkama.veera@gmail.com</a></p>
-      </div>
+      <p style="max-width: 600px; margin: auto; line-height: 1.6; font-size: 16px;">
+        Kiinnostuitko yhteistöstä, sisällöntuotannosta tai jostain muusta projektista, jossa voisin auttaa? Ota matalalla kynnyksellä yhteyttä sähköpostilla – vastaan mielelläni!
+      </p>
+      <p style="text-align: center; margin-top: 20px;">
+        <a href="mailto:helkama.veera@gmail.com" style="font-weight: bold; color: #d81b60; text-decoration: none;">helkama.veera@gmail.com</a>
+      </p>
     </div>
   </div>
 
